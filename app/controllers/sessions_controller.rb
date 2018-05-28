@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if !params[:user][:password].nil? && params[:user][:password] != ''
       @user = User.find_by(name: params[:user][:name])
       #return head(:forbidden) unless @user.authenticate(params[:password])
-      session[:password] = @user.password
+      session[:user_id] = @user.id
       redirect_to '/home'
     else
       redirect_to '/login'
