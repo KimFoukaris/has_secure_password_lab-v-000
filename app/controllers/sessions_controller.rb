@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     #raise params.inspect
-    @user = User.find_by(name: params[:name])
+    @user = User.find_by(name: params[:user][:name])
     binding.pry
     #raise params.inspect
     return head(:forbidden) unless @user.authenticate(params[:password])
