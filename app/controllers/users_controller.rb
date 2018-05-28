@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.pry
     @user.save
     if @user.password == @user.password_confirmation
       session[:user_id] = @user.id
