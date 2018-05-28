@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.password == @user.password_confirmation
-      session[:user_id] = @user.id
+      session[:password] = @user.password
       redirect_to '/home'
     else
       redirect_to '/signup'
