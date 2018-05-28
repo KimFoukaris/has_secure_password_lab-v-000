@@ -6,8 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    binding.pry
-    @user.save
     if @user.password == @user.password_confirmation
       session[:user_id] = @user.id
       redirect_to '/home'
