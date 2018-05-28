@@ -12,5 +12,6 @@ class SessionsController < ApplicationController
       redirect_to '/home'
     else
       redirect_to '/login'
+    end
   end
 end
