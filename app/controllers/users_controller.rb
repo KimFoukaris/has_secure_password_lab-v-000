@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(name: params[:user][:name], password: params[:user][:name], password_confirmation: params[:user][password_confirmation] )
     binding.pry
     @user.save
     if @user.password == @user.password_confirmation
